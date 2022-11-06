@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlashCards
+namespace Flashcards
 {
-    internal class FlashCards
+    internal class Flashcards
     {
         int Id { get; set; }
         int StackId { get; set; }
-        string FlashCardFront { get; set; }
-        string FlashCardBack { get; set; }
+        string FlashcardFront { get; set; }
+        string FlashcardBack { get; set; }
     }
 }
