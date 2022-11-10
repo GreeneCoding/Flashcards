@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace FlashCards
 {
-    internal class FlashCardsController
+    internal class FlashcardsController
     {
-        //TALKS TO THE DATABASE - FlashCards Table
-        public static void CreateFlashCards()
+        //TALKS TO THE DATABASE - Flashcards Table
+        public static void CreateFlashcards()
         {
 
         }

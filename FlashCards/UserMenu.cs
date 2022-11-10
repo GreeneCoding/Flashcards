@@ -32,7 +32,7 @@ namespace Flashcards
                         break;
                     case "2":
                         Console.Clear();
-                        FlashCardsMenu.ShowFlashCardsMenu();
+                        FlashcardsMenu.ShowFlashcardsMenu();
                         break;
                     case "3":
                         

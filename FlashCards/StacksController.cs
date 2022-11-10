@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Flashcards
 {
-    internal class Stacks
+    internal class StacksController
     {
-        int Id { get; set; }
-        string StackName { get; set; }
+        //TALKS TO THE DATABASE - Stacks Table
     }
 }

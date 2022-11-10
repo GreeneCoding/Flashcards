@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Flashcards
 {
-    internal class FlashcardsMenu
+    internal class StacksMenu
     {
-        public static void ShowFlashcardsMenu()
+        public static void ShowStacksMenu()
         {
             bool returnToUserMenu = false;
             while (returnToUserMenu == false)
             {
-                Console.WriteLine("\nFlashcard Management, please select one of the following options from 0 - 4");
-                Console.WriteLine("\nType 1 to create a new flashcard.");
-                Console.WriteLine("\nType 2 to view all flashcards by stack.");
-                Console.WriteLine("\nType 3 to to update flashcards.");
-                Console.WriteLine("\nType 4 to to delete flashcards.");
+                Console.WriteLine("\nStacks Management, please select one of the following options from 0 - 4");
+                Console.WriteLine("\nType 1 to create a new stack.");
+                Console.WriteLine("\nType 2 to view stacks.");
+                Console.WriteLine("\nType 3 to to update stacks.");
+                Console.WriteLine("\nType 4 to to delete stacks.");
                 Console.WriteLine("\nType 0 to return to the Main Menu.");
 
                 var commandInput = Console.ReadLine();
@@ -46,5 +45,6 @@ namespace Flashcards
                 }
             }
         }
+        
     }
 }
