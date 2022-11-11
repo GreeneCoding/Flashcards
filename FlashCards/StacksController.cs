@@ -10,7 +10,7 @@ namespace Flashcards
 {
     internal class StacksController
     {
-        //TALKS TO THE DATABASE - Stacks Table
+        //TALKS TO THE DATABASE - Stacks Table, in the middle of refactoring SQLite code to SQLclient code
         static string connectionString = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
         public static void ViewStacksTable()
         {
