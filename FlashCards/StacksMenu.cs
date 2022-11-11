@@ -28,7 +28,7 @@ namespace Flashcards
                         returnToUserMenu = true;
                         break;
                     case "1":
-
+                        StacksProcesses.CreateNewStack();
                         break;
                     case "2":
 

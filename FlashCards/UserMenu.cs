@@ -28,7 +28,8 @@ namespace Flashcards
                         closeApp = true;
                         break;
                     case "1":
-                        
+                        Console.Clear();
+                        StacksMenu.ShowStacksMenu();
                         break;
                     case "2":
                         Console.Clear();
