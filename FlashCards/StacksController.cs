@@ -23,17 +23,22 @@ namespace Flashcards
                     tableCmd.ExecuteNonQuery();
 
                     List<Stacks> stacksData = new();
-                    SqliteDataReader reader = tableCmd.ExecuteReader();
+                    SqlDataReader reader = tableCmd.ExecuteReader();
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             stacksData.Add(new Stacks
                             {
-                                Id = 
+                                Id = reader.GetInt32(0),
+                                StackName = reader.GetString(1)
                             }
                             );
                         }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No rows found.");
                     }
 
                 }

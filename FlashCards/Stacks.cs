@@ -8,7 +8,7 @@ namespace Flashcards
 {
     internal class Stacks
     {
-        int Id { get; set; }
-        string StackName { get; set; }
+        public int Id { get; set; }
+        public string StackName { get; set; }
     }
 }
