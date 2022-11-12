@@ -28,10 +28,10 @@ namespace Flashcards
                         returnToUserMenu = true;
                         break;
                     case "1":
-                        StacksProcesses.CreateNewStack();
+                        StacksProcesses.CreateStackProcess();
                         break;
                     case "2":
-
+                        StacksProcesses.GetStacksProcess();
                         break;
                     case "3":
 

@@ -11,9 +11,15 @@ namespace Flashcards
         //Collect User Input for stacks, get stack info, and complete validation here, and finally call the Stacks Controller
         //(link different methods here from other classes here to complete the above)
 
-        public static void CreateNewStack()
+        public static void CreateStackProcess()
         {
-            StackInput.GetNewStackName();
+            string stackName = StackInput.GetNewStackName();
+            StacksController.CreateStacks(stackName);
+        }
+
+        public static void GetStacksProcess()
+        {
+            StacksController.ViewStacksTable();
         }
     }
 }

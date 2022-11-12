@@ -11,8 +11,15 @@ namespace Flashcards
         public static string GetNewStackName()
         {
             Console.WriteLine("Please enter the name of your new stack.");
-            string stackname = Console.ReadLine();
-            return stackname;
+            string stackName = Console.ReadLine();
+            bool stackUnique = StackValidation.IsStackUnique(stackName);
+            while (stackUnique == false)
+            {
+                Console.WriteLine("Stack name is already in use. Please try again");
+                stackName = Console.ReadLine();
+            }
+           
+            return stackName;
         }
     }
 }

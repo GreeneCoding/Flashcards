@@ -9,9 +9,18 @@ namespace Flashcards
 {
     internal class StackValidation
     {
-        public static bool IsStackUnique()
+        public static bool IsStackUnique(string stackName)
         {
             bool result = false;
+            List<Stacks> stackData = StacksController.ViewStacksbyName(stackName);
+            if (stackData == null)
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
 
             return result;
         }
