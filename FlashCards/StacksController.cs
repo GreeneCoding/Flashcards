@@ -68,10 +68,6 @@ namespace Flashcards
                             );
                         }
                     }
-                    else
-                    {
-                        Console.WriteLine("No rows found.");
-                    }
                     return stacksData;
 
                 }
@@ -84,7 +80,7 @@ namespace Flashcards
                 using (var tableCmd = connection.CreateCommand())
                 {
                     connection.Open();
-                    tableCmd.CommandText = @"INSERT INTO StackName VALUES @StackName = stackName";
+                    tableCmd.CommandText = @"INSERT INTO Stacks (StackName) VALUES (@StackName)";
                     tableCmd.Parameters.AddWithValue("@StackName", stackName);
                     tableCmd.ExecuteNonQuery();
                 }

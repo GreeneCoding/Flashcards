@@ -13,7 +13,7 @@ namespace Flashcards
         {
             bool result = false;
             List<Stacks> stackData = StacksController.ViewStacksbyName(stackName);
-            if (stackData == null)
+            if (stackData.Count == 0)
             {
                 result = true;
             }

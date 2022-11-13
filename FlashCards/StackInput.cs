@@ -17,6 +17,7 @@ namespace Flashcards
             {
                 Console.WriteLine("Stack name is already in use. Please try again");
                 stackName = Console.ReadLine();
+                stackUnique = StackValidation.IsStackUnique(stackName);
             }
            
             return stackName;
