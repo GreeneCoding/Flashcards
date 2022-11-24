@@ -21,5 +21,10 @@ namespace Flashcards
         {
             StacksController.ViewStacksTable();
         }
+
+        public static void UpdateStackName()
+        {
+
+        }
     }
 }
