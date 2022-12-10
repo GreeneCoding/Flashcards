@@ -19,12 +19,14 @@ namespace Flashcards
 
         public static void GetStacksProcess()
         {
-            StacksController.ViewStacksTable();
+            List<Stacks> stacksData = StacksController.ViewStacksTable();
+            StacksVisualizationEngine.ShowStacksTable(stacksData);
         }
 
         public static void UpdateStackName()
         {
-
+            GetStacksProcess();
+            int id = StackInput.
         }
     }
 }

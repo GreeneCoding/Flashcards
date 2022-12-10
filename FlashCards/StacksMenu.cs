@@ -34,7 +34,7 @@ namespace Flashcards
                         StacksProcesses.GetStacksProcess();
                         break;
                     case "3":
-
+                        StacksProcesses.UpdateStackName();
                         break;
                     case "4":
 

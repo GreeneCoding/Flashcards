@@ -7,7 +7,7 @@ internal class StacksController
 {
     //TALKS TO THE DATABASE - Stacks Table, in the middle of refactoring SQLite code to SQLclient code
     static string connectionString = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
-    public static void ViewStacksTable()
+    public static List<Stacks> ViewStacksTable()
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -35,7 +35,7 @@ internal class StacksController
                 {
                     Console.WriteLine("No rows found.");
                 }
-
+                return stacksData;
             }
         }
     }
@@ -81,5 +81,20 @@ internal class StacksController
             }
         }
 
+    }
+
+    public static void UpdateStacks(int id,string stackName)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            using (var tableCmd = connection.CreateCommand())
+            {
+                connection.Open();
+                tableCmd.CommandText = @"UPDATE Stacks SET StackName = (@StackName) WHERE Id = (@Id)";
+                tableCmd.Parameters.AddWithValue("@StackName", stackName);
+                tableCmd.Parameters.AddWithValue("@Id", id);
+                tableCmd.ExecuteNonQuery();
+            }
+        }
     }
 }

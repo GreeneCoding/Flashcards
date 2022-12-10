@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ConsoleTableExt;
 
 namespace Flashcards;
 
 internal class StacksVisualizationEngine
 {
-    public void ShowStacksTable(List<Stacks> stacksData)
+    public static void ShowStacksTable(List<Stacks> stacksData)
     {
-
+        ConsoleTableBuilder
+        .From(stacksData)
+        .ExportAndWriteLine();
     }
 }

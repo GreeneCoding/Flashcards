@@ -24,5 +24,10 @@ namespace Flashcards
 
             return result;
         }
+
+        public static bool IdExists(string id)
+        {
+
+        }
     }
 }
