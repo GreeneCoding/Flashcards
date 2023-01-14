@@ -25,9 +25,13 @@ namespace Flashcards
             return result;
         }
 
-        public static bool IdExists(string id)
+        public static bool ValidIdExists(string id)
         {
+           bool idExists = false;
+           while (idExists = false)
+            {
 
+            }
         }
     }
 }

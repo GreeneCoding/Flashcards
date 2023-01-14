@@ -30,16 +30,17 @@ namespace Flashcards
             Console.WriteLine("Please enter the Id of the stack you would like to update");
             string id = Console.ReadLine();
 
-            bool idExists = StackValidation.IdExists(id);
+            bool idExists = StackValidation.ValidIdExists(id);
             while (idExists == false)
             {
                 Console.WriteLine("Id does not exists, please try again");
                 id = Console.ReadLine();
 
-                idExists = StackValidation.IdExists(id);
+                idExists = StackValidation.ValidIdExists(id);
             }
+            int validId = Convert.ToInt32(id);
 
-            return;
+            return validId;
         }
     }
 }

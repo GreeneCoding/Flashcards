@@ -26,7 +26,7 @@ namespace Flashcards
         public static void UpdateStackName()
         {
             GetStacksProcess();
-            int id = StackInput.
+            int id = StackInput.GetStackId();
         }
     }
 }

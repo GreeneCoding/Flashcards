@@ -39,6 +39,39 @@ internal class StacksController
             }
         }
     }
+
+    public static List<Stacks> GetStacksId(int id)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            using (var tableCmd = connection.CreateCommand())
+            {
+                connection.Open();
+                tableCmd.CommandText = @"SELECT id FROM Stacks WHERE @Id = id";
+                tableCmd.Parameters.AddWithValue("@Id",id);
+                tableCmd.ExecuteNonQuery();
+
+                List<Stacks> stacksId = new();
+                SqlDataReader reader = tableCmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        stacksId.Add(new Stacks
+                        {
+                            Id = reader.GetInt32(0)
+                        }
+                        );
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                }
+                return stacksId;
+            }
+        }
+    }
     public static List<Stacks> ViewStacksbyName(string stackName)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
