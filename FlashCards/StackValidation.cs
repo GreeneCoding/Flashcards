@@ -28,10 +28,17 @@ namespace Flashcards
         public static bool ValidIdExists(string id)
         {
            bool idExists = false;
-           while (idExists = false)
+            List<Stacks> stackId = StacksController.GetStacksId(id);
+            if (stackId.Count == 0)
             {
-
+                idExists = false;
             }
+            else
+            {
+                idExists = true;
+            }
+            return idExists;
+
         }
     }
 }

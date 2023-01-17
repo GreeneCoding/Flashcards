@@ -23,10 +23,17 @@ namespace Flashcards
             StacksVisualizationEngine.ShowStacksTable(stacksData);
         }
 
+        public static void GetStacksIdProcess(string id)
+        {
+            StacksController.GetStacksId(id);
+        }
+
         public static void UpdateStackName()
         {
             GetStacksProcess();
             int id = StackInput.GetStackId();
+            string stackName = StackInput.GetNewStackName();
+            StacksController.UpdateStacks(id, stackName);
         }
     }
 }

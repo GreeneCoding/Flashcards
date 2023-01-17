@@ -40,7 +40,7 @@ internal class StacksController
         }
     }
 
-    public static List<Stacks> GetStacksId(int id)
+    public static List<Stacks> GetStacksId(string id)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
