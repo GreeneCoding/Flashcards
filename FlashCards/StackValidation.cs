@@ -40,5 +40,12 @@ namespace Flashcards
             return idExists;
 
         }
+
+        public static bool ValidId(string id)
+        {
+            bool validId = (!int.TryParse(id, out _) || Convert.ToInt32(id) < 0);
+            return validId;
+          
+        }
     }
 }
