@@ -37,7 +37,7 @@ namespace Flashcards
                         StacksProcesses.UpdateStackName();
                         break;
                     case "4":
-
+                        StacksProcesses.DeleteStack();
                         break;
                     default:
                         Console.WriteLine(@"Invalid input, please enter a value from 0-4");

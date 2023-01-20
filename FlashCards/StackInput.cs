@@ -27,11 +27,11 @@ namespace Flashcards
 
         public static int GetStackId()
         {
-            Console.WriteLine("Please enter the Id of the stack you would like to update");
+            Console.WriteLine("Please enter the Id of the stack you would like to perform the selected operation against.");
             string id = Console.ReadLine();
 
             bool checkValidId = StackValidation.ValidId(id);
-            while ( checkValidId == true)
+            while (checkValidId == true)
             {
                 Console.WriteLine("Invalid id entered, please try again.");
                 id = Console.ReadLine();

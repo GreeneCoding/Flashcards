@@ -35,5 +35,12 @@ namespace Flashcards
             string stackName = StackInput.GetNewStackName();
             StacksController.UpdateStacks(id, stackName);
         }
+
+        public static void DeleteStack()
+        {
+            GetStacksProcess();
+            int id = StackInput.GetStackId();
+            StacksController.DeleteStacks(id);
+        }
     }
 }

@@ -130,4 +130,18 @@ internal class StacksController
             }
         }
     }
+
+    public static void DeleteStacks(int id)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            using (var tableCmd = connection.CreateCommand())
+            {
+                connection.Open();
+                tableCmd.CommandText = @"DELETE FROM Stacks WHERE Id = (@Id)";
+                tableCmd.Parameters.AddWithValue("@Id", id);
+                tableCmd.ExecuteNonQuery();
+            }
+        }
+    }
 }
