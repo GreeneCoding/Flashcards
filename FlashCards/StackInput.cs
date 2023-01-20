@@ -10,8 +10,9 @@ namespace Flashcards
     {
         public static string GetNewStackName()
         {
-            Console.WriteLine("Please enter the name of your new stack.");
+            Console.WriteLine("Please enter the name of your new stack. Enter 0 to return to the Stacks Menu");
             string stackName = Console.ReadLine();
+            if (stackName == "0") StacksMenu.ShowStacksMenu();
 
             bool stackUnique = StackValidation.IsStackUnique(stackName);
             while (stackUnique == false)
@@ -27,8 +28,9 @@ namespace Flashcards
 
         public static int GetStackId()
         {
-            Console.WriteLine("Please enter the Id of the stack you would like to perform the selected operation against.");
+            Console.WriteLine("Please enter the Id of the stack you would like to perform the selected operation against. Enter 0 to return to the Stacks Menu");
             string id = Console.ReadLine();
+            if (id == "0") StacksMenu.ShowStacksMenu();
 
             bool checkValidId = StackValidation.ValidId(id);
             while (checkValidId == true)
@@ -38,6 +40,7 @@ namespace Flashcards
 
                 checkValidId = StackValidation.ValidId(id);
             }
+
 
             bool idExists = StackValidation.ValidIdExists(id);
             while (idExists == false)
