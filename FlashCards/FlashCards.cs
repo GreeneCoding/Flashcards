@@ -10,7 +10,7 @@ namespace Flashcards
     {
         int Id { get; set; }
         int StackId { get; set; }
-        string FlashcardFront { get; set; }
-        string FlashcardBack { get; set; }
+        string? FlashcardFront { get; set; }
+        string? FlashcardBack { get; set; }
     }
 }
