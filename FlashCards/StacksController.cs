@@ -101,6 +101,36 @@ internal class StacksController
             }
         }
     }
+
+    public static List<Stacks> GetStackIdbyName(string stackName)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            using (var tableCmd = connection.CreateCommand())
+            {
+                connection.Open();
+                tableCmd.CommandText = @"SELECT Id FROM Stacks WHERE @StackName = stackName";
+                tableCmd.Parameters.AddWithValue("@StackName", stackName);
+                tableCmd.ExecuteNonQuery();
+
+                List<Stacks> stacksData = new();
+                SqlDataReader reader = tableCmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        stacksData.Add(new Stacks
+                        {
+                            Id = reader.GetInt32(0)
+                        }
+                        );
+                    }
+                }
+                return stacksData;
+
+            }
+        }
+    }
     public static void CreateStacks(string stackName)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))

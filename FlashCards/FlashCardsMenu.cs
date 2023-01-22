@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace Flashcards
                         returnToUserMenu = true;
                         break;
                     case "1":
-
+                        FlashcardProcesses.CreateFlashCardsProcess();
                         break;
                     case "2":
 

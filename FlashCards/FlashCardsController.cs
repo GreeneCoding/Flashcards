@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 
 
-namespace FlashCards
+namespace Flashcards
 {
     internal class FlashcardsController
     {
@@ -15,7 +15,7 @@ namespace FlashCards
                     using (var tableCmd = connection.CreateCommand())
                     {
                         connection.Open();
-                        tableCmd.CommandText = @"INSERT INTO Flashcards (StackId, FlashcardFront, Flashcardback) VALUES (@Id,@StackId,@FlashcardFront,@FlashcardBack)";
+                        tableCmd.CommandText = @"INSERT INTO Flashcards (StackId, FlashcardFront, Flashcardback) VALUES (@StackId,@FlashcardFront,@FlashcardBack)";
                         tableCmd.Parameters.AddWithValue("@StackId", stackId);
                         tableCmd.Parameters.AddWithValue("@FlashcardFront", flashcardFront);
                         tableCmd.Parameters.AddWithValue("@FlashcardBack", flashcardBack);
@@ -23,7 +23,7 @@ namespace FlashCards
                     }
                 }
 
-            }
+            
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlashCards
+namespace Flashcards
 {
     internal class FlashcardProcesses
     {
@@ -13,9 +13,10 @@ namespace FlashCards
         //(link different methods here from other classes here to complete the above)
         public static void CreateFlashCardsProcess()
         {
-            int stackId = FlashcardsInput.;
-            string flashcardFront = FlashcardsInput.;
-            string flashcardBack = FlashcardsInput.;
+            StacksProcesses.GetStacksProcess();
+            int stackId = StackInput.GetStackId();
+            string flashcardFront = FlashcardsInput.GetFlashcardFront();
+            string flashcardBack = FlashcardsInput.GetFlashcardBack();
             FlashcardsController.CreateFlashcards(stackId, flashcardFront,flashcardBack);
         }
 
