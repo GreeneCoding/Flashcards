@@ -8,6 +8,24 @@ namespace Flashcards
 {
     internal class StackInput
     {
+        public static string GetStackName()
+        {
+            Console.WriteLine($"Please enter the name of the stack that you would like to view flashcards for. Or enter 0 to return to the Flashcards Menu.");
+            string stackName = Console.ReadLine();
+            if (stackName == "0") FlashcardsMenu.ShowFlashcardsMenu();
+
+            bool stackExists = StackValidation.StackExists(stackName);
+            while (stackExists == false)
+            {
+                Console.WriteLine("The stack you have entered does not exist, please try again.");
+                stackName = Console.ReadLine();
+                
+                stackExists = StackValidation.StackExists(stackName);
+
+            }
+
+            return stackName;
+        }
         public static string GetNewStackName()
         {
             Console.WriteLine("Please enter the name of your new stack. Enter 0 to return to the Stacks Menu");
