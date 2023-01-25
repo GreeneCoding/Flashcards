@@ -8,9 +8,9 @@ namespace Flashcards
 {
     internal class Flashcards
     {
-        int Id { get; set; }
-        int StackId { get; set; }
-        string? FlashcardFront { get; set; }
-        string? FlashcardBack { get; set; }
+        public int Id { get; set; }
+        public int StackId { get; set; }
+        public string? FlashcardFront { get; set; }
+        public string? FlashcardBack { get; set; }
     }
 }

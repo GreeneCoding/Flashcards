@@ -23,8 +23,17 @@ namespace Flashcards
         public static void GetFlashcardsByStackName()
         {
             StacksProcesses.GetStacksProcess();
+            
             string stackName =  StackInput.GetStackName();
-            FlashcardProcesses.GetFlashcardsByStackName();
+            List<FlashcardsDTO> flashcardsData = FlashcardsController.GetFlashcardsbyStackName(stackName);
+            var flashcards = new List<List<object>>();
+            foreach (FlashcardsDTO flashcard in flashcardsData)
+            {
+                flashcards.Add(new List<object> { flashcardsData.IndexOf(flashcard) + 1, flashcard.flashcardFront, flashcard.flashcardBack });
+            }
+
+            FlashcardsVisualizationEngine.ShowFlashcards(flashcards);
+
         }
 
     }

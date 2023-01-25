@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Flashcards
 {
     internal class FlashcardsDTO
-    { 
-        string flashcardFront { get; set; }
-        string flashcardBack { get; set; }
+    {
+        public string flashcardFront { get; set; }
+        public string flashcardBack { get; set; }
     }
 }

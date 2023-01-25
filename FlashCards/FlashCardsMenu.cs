@@ -30,10 +30,10 @@ namespace Flashcards
                         returnToUserMenu = true;
                         break;
                     case "1":
-                        FlashcardProcesses.CreateFlashCardsProcess();
+                        FlashcardProcesses.CreateFlashcardsProcess();
                         break;
                     case "2":
-
+                        FlashcardProcesses.GetFlashcardsByStackName();
                         break;
                     case "3":
 

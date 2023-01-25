@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 
@@ -26,14 +27,14 @@ namespace Flashcards
             
         }
 
-        public static void GetFlashcardsbyStackName(string stackName)
+        public static List<FlashcardsDTO> GetFlashcardsbyStackName(string stackName)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (var tableCmd = connection.CreateCommand())
                 {
                     connection.Open();
-                    tableCmd.CommandText = @"SELECT flashcardFront,flashcardBack FROM Flashcards JOIN Stacks ON Stacks.Id = Flashcards.StackId WHERE Stacks.Name = @StackName";
+                    tableCmd.CommandText = @"SELECT flashcardFront,flashcardBack FROM Flashcards JOIN Stacks ON Stacks.Id = Flashcards.StackId WHERE Stacks.StackName = @StackName";
                     tableCmd.Parameters.AddWithValue("@StackName", stackName);
                     tableCmd.ExecuteNonQuery();
 
@@ -45,11 +46,14 @@ namespace Flashcards
                         {
                             flashcardsData.Add(new FlashcardsDTO
                             {
-                                StackName = reader.GetString(0)
+                                flashcardFront = reader.GetString(0),
+                                flashcardBack = reader.GetString(1)
                             }
-                            );
+                            ) ;
                         }
                     }
+
+                    return flashcardsData;
                 }
             }
         }
